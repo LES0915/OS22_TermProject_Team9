@@ -18,6 +18,7 @@ if action == 'sign up':
     user_file.write(password)
     user_file.close()
 
+    #카메라로 유저 얼굴 캡처하고 knowns에 넣어줌
     capture = cv2.VideoCapture(0)
     if capture.isOpened():
         while True:
