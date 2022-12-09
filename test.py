@@ -19,6 +19,14 @@ def personal():
 
 
 #registration service
+#push 하고싶다#push 하고싶다#push 하고싶다#push 하고싶다#push 하고싶다#push 하고싶다#push 하고싶다
+# #push 하고싶다#push 하고싶다#push 하고싶다#push 하고싶다#push 하고싶다#push 하고싶다#push 하고싶다
+# #push 하고싶다#push 하고싶다#push 하고싶다#push 하고싶다#push 하고싶다#push 하고싶다#push 하고싶다
+# #push 하고싶다#push 하고싶다#push 하고싶다#push 하고싶다#push 하고싶다#push 하고싶다#push 하고싶다
+# #push 하고싶다#push 하고싶다#push 하고싶다#push 하고싶다#push 하고싶다#push 하고싶다#push 하고싶다
+# #push 하고싶다#push 하고싶다#push 하고싶다#push 하고싶다#push 하고싶다#push 하고싶다#push 하고싶다
+# #push 하고싶다#push 하고싶다#push 하고싶다#push 하고싶다#push 하고싶다#push 하고싶다#push 하고싶다
+# #push 하고싶다#push 하고싶다
 while 1: 
     entire_name = []
     # 초기화면
