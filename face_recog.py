@@ -6,7 +6,7 @@ import camera
 import os
 import numpy as np
 
-class FaceRecog():
+class FaceRecog:
     def __init__(self):
         # Using OpenCV to capture from device 0. If you have trouble capturing
         # from a webcam, comment the line below out and use a video file
@@ -39,6 +39,7 @@ class FaceRecog():
 
     def get_frame(self):
         # Grab a single frame of video
+        global temp_name
         frame = self.camera.get_frame()
 
         # Resize frame of video to 1/4 size for faster face recognition processing
@@ -59,19 +60,19 @@ class FaceRecog():
                 distances = face_recognition.face_distance(self.known_face_encodings, face_encoding)
                 min_value = min(distances)
 
-                # tolerance: How much distance between faces to consider it a match. Lower is more strict.
+                # tolerance: How much distance between faces to consider it a match. Lower is stricter.
                 # 0.6 is typical best performance.
-                name = "Unknown"
+                temp_name = "Unknown"
                 if min_value < 0.6:
                     index = np.argmin(distances)
-                    name = self.known_face_names[index]
+                    temp_name = self.known_face_names[index]
 
-                self.face_names.append(name)
+                self.face_names.append(temp_name)
 
         self.process_this_frame = not self.process_this_frame
 
         # Display the results
-        for (top, right, bottom, left), name in zip(self.face_locations, self.face_names):
+        for (top, right, bottom, left), temp_name in zip(self.face_locations, self.face_names):
             # Scale back up face locations since the frame we detected in was scaled to 1/4 size
             top *= 4
             right *= 4
@@ -84,9 +85,9 @@ class FaceRecog():
             # Draw a label with a name below the face
             cv2.rectangle(frame, (left, bottom - 35), (right, bottom), (0, 0, 255), cv2.FILLED)
             font = cv2.FONT_HERSHEY_DUPLEX
-            cv2.putText(frame, name, (left + 6, bottom - 6), font, 1.0, (255, 255, 255), 1)
+            cv2.putText(frame, temp_name, (left + 6, bottom - 6), font, 1.0, (255, 255, 255), 1)
 
-        return name
+        return frame, temp_name
 
     def get_jpg_bytes(self):
         frame = self.get_frame()
@@ -95,22 +96,3 @@ class FaceRecog():
         # video stream.
         ret, jpg = cv2.imencode('.jpg', frame)
         return jpg.tobytes()
-
-
-if __name__ == '__main__':
-    face_recog = FaceRecog()
-    print(face_recog.known_face_names)
-    while True:
-        frame = face_recog.get_frame()
-
-        # show the frame
-        cv2.imshow("Frame", frame)
-        key = cv2.waitKey(1) & 0xFF
-
-        # if the `q` key was pressed, break from the loop
-        if key == ord("q"):
-            break
-
-    # do a bit of cleanup
-    cv2.destroyAllWindows()
-    print('finish')
