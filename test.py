@@ -5,6 +5,19 @@ import os
 import numpy as np
 
 
+def personal():
+    phonenumber=[]
+    phonenumber = int(input())
+    print(phonenumber)
+    address = []
+    address = input()
+    print(address)
+    myname =[]
+    myname = input()
+    print(myname)
+
+
+
 #registration service
 
 entire_name = []
@@ -148,7 +161,6 @@ elif str == 'log in':
 
             # if the `q` key was pressed, break from the loop
             if temp == entire_name:
-                tmpcamera = camera.VideoCamera()
                 break
 
         # do a bit of cleanup
