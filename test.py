@@ -148,9 +148,10 @@ while 1:
                 cv2.imshow("Frame", frame)
                 key = cv2.waitKey(1) & 0xFF
 
-                # if the `q` key was pressed, break from the loop
-                if temp == entire_name:
-                    break
+            # if the `q` key was pressed, break from the loop
+            if temp == entire_name:
+                tmpcamera = camera.VideoCamera()
+                break
 
             # do a bit of cleanup
             cv2.destroyAllWindows()
