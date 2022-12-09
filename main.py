@@ -72,6 +72,7 @@ elif action == 'log in':
                 else:
                     print('Wrong password! Exit the register...')
 
+        user_file.close()
         cv2.destroyAllWindows()
         print('finish')
 
