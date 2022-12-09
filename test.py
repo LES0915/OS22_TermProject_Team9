@@ -4,6 +4,9 @@ import camera
 import os
 import numpy as np
 
+
+#registration service
+
 entire_name = []
 print('Enter \'sign up\' if you want to sign up and \'log in\' if you want to log in.')
 str = (input())
@@ -34,7 +37,6 @@ if str == 'sign up':
 
 elif str == 'log in':
     print('Please look at the camera lens.')
-
 
     class FaceRecog():
         def __init__(self):
@@ -152,7 +154,6 @@ elif str == 'log in':
         cv2.destroyAllWindows()
         print('finish')
 
-
-
 else:
     print('You have been entered incorrectly. Please re-enter.')
+
