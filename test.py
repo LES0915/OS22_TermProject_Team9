@@ -4,7 +4,6 @@ import camera
 import os
 import numpy as np
 
-
 def personal():
     phonenumber=[]
     phonenumber = int(input())
@@ -16,22 +15,13 @@ def personal():
     myname = input()
     print(myname)
 
-
-
 #registration service
-#push 하고싶다#push 하고싶다#push 하고싶다#push 하고싶다#push 하고싶다#push 하고싶다#push 하고싶다
-# #push 하고싶다#push 하고싶다#push 하고싶다#push 하고싶다#push 하고싶다#push 하고싶다#push 하고싶다
-# #push 하고싶다#push 하고싶다#push 하고싶다#push 하고싶다#push 하고싶다#push 하고싶다#push 하고싶다
-# #push 하고싶다#push 하고싶다#push 하고싶다#push 하고싶다#push 하고싶다#push 하고싶다#push 하고싶다
-# #push 하고싶다#push 하고싶다#push 하고싶다#push 하고싶다#push 하고싶다#push 하고싶다#push 하고싶다
-# #push 하고싶다#push 하고싶다#push 하고싶다#push 하고싶다#push 하고싶다#push 하고싶다#push 하고싶다
-# #push 하고싶다#push 하고싶다#push 하고싶다#push 하고싶다#push 하고싶다#push 하고싶다#push 하고싶다
-# #push 하고싶다#push 하고싶다
+
 while 1: 
     entire_name = []
     # 초기화면
     print('Enter \'sign up\' if you want to sign up and \'log in\' if you want to log in.')
-    str = (input())
+    str = input()
     # 회원가입
     if str == 'sign up':
         print('Please enter a name:')
@@ -118,17 +108,17 @@ while 1:
 
                         # tolerance: How much distance between faces to consider it a match. Lower is more strict.
                         # 0.6 is typical best performance.
-                        name = "Unknown"
+                        temp_name = "Unknown"
                         if min_value < 0.6:
                             index = np.argmin(distances)
-                            name = self.known_face_names[index]
+                            temp_name = self.known_face_names[index]
 
-                        self.face_names.append(name)
+                        self.face_names.append(temp_name)
 
                 self.process_this_frame = not self.process_this_frame
 
                 # Display the results
-                for (top, right, bottom, left), name in zip(self.face_locations, self.face_names):
+                for (top, right, bottom, left), temp_name in zip(self.face_locations, self.face_names):
                     # Scale back up face locations since the frame we detected in was scaled to 1/4 size
                     top *= 4
                     right *= 4
@@ -141,7 +131,7 @@ while 1:
                     # Draw a label with a name below the face
                     cv2.rectangle(frame, (left, bottom - 35), (right, bottom), (0, 0, 255), cv2.FILLED)
                     font = cv2.FONT_HERSHEY_DUPLEX
-                    cv2.putText(frame, name, (left + 6, bottom - 6), font, 1.0, (255, 255, 255), 1)
+                    cv2.putText(frame, temp_name, (left + 6, bottom - 6), font, 1.0, (255, 255, 255), 1)
 
                 return frame
 
@@ -170,7 +160,7 @@ while 1:
                 key = cv2.waitKey(1) & 0xFF
 
             # if the `q` key was pressed, break from the loop
-            if temp == entire_name:
+            if temp == temp_name:
                 break
 
             # do a bit of cleanup
@@ -179,6 +169,3 @@ while 1:
 
     else:
         print('You have been entered incorrectly. Please re-enter.')
-
-
-
