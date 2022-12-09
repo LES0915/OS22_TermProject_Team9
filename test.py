@@ -148,6 +148,7 @@ elif str == 'log in':
 
             # if the `q` key was pressed, break from the loop
             if temp == entire_name:
+                tmpcamera = camera.VideoCamera()
                 break
 
         # do a bit of cleanup
