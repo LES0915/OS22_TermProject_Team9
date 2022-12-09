@@ -45,6 +45,7 @@ elif action == 'log in':
 
         print('Please waiting...')
         print('If your face is not recognized, press p to enter the password.')
+        print('And if you want to exit the program, press the q key.')
         face_recog = face_recog.FaceRecog()
 
         while True:
@@ -60,7 +61,7 @@ elif action == 'log in':
 
             # 입력받은 이름이 카메라로 인식한 사람의 얼굴 이름과 동일하면
             elif user_name == compare_name:
-                print('User {}, Welcome!'.format(user_name))
+                print('** User {}, Welcome! **'.format(user_name))
                 break
 
             # 인식이 안돼서 p 버튼 누르고 비밀번호를 입력받고 싶다면
@@ -69,7 +70,7 @@ elif action == 'log in':
                 password = input()
                 user_file = open('datas/{}.txt'.format(user_name), 'r')
                 if password == user_file.read():
-                    print('User {}, Welcome!'.format(user_name))
+                    print('** User {}, Welcome! **'.format(user_name))
                 else:
                     print('Wrong password! Exit the register...')
 
