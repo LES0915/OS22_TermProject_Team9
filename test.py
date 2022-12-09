@@ -4,7 +4,6 @@ import camera
 import os
 import numpy as np
 
-
 #registration service
 
 entire_name = []
@@ -38,7 +37,6 @@ if num == 1:
 
 elif num == 2:
     print('Please look at the camera lens.')
-
 
     class FaceRecog():
         def __init__(self):
@@ -156,8 +154,5 @@ elif num == 2:
         cv2.destroyAllWindows()
         print('finish')
 
-
-
 else:
     print('You have been entered incorrectly. Please re-enter.')
-
