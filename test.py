@@ -4,16 +4,12 @@ import camera
 import os
 import numpy as np
 
-
-#registration service
-
 entire_name = []
-print("!!Face recognition registration system!!\n")
-print('Enter 1 if you want to sign up and 2 if you want to log in.')
-num = int(input())
-if num == 1:
+print('Enter \'sign up\' if you want to sign up and \'log in\' if you want to log in.')
+str = (input())
+if str == 'sign up':
     print('Please enter a name:')
-    name = input()
+    a = input()
     cap = cv2.VideoCapture(0)
     if cap.isOpened():
 
@@ -24,7 +20,7 @@ if num == 1:
                 cv2.imshow('camera', frame)
 
                 if cv2.waitKey(1) != -1:
-                    cv2.imwrite('knowns/{}.jpg'.format(name), frame)
+                    cv2.imwrite('knowns/{}.jpg'.format(a), frame)
                     break
 
             else:
@@ -36,7 +32,7 @@ if num == 1:
     cv2.destroyAllWindows()
 
 
-elif num == 2:
+elif str == 'log in':
     print('Please look at the camera lens.')
 
 
@@ -160,4 +156,3 @@ elif num == 2:
 
 else:
     print('You have been entered incorrectly. Please re-enter.')
-
