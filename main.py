@@ -15,7 +15,7 @@ def checkName(user_name):
         if ext == '.txt':
             name_data.append(name)
 
-    count2 = 0
+    count = 0
     for i in name_data:
         if i == user_name:
             count += 1
