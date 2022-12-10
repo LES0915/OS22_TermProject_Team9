@@ -5,8 +5,6 @@ import face_recog
 
 #registration service
 
-
-
 print('Enter \'sign up\' if you want to sign up and \'log in\' if you want to log in.')
 action = input()
 
@@ -63,7 +61,7 @@ elif action == 'log in':
 
         if count == 1:
             print('Please waiting...')
-            print('If your face is not recognized, press p to enter the password.')
+            print('If your face is not recognized, press p in camera screen to enter the password.')
             print('And if you want to exit the program, press the q key.')
             face_recog = face_recog.FaceRecog()
 
