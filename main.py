@@ -5,13 +5,7 @@ import face_recog
 
 #registration service
 
-entire_data = []
 
-file = os.listdir('datas')
-for filename in file:
-    name, ext = os.path.splitext(filename)
-    if ext == '.txt':
-        entire_data.append(name)
 
 print('Enter \'sign up\' if you want to sign up and \'log in\' if you want to log in.')
 action = input()
@@ -53,41 +47,59 @@ elif action == 'log in':
         print('Enter the name to login: ')
         user_name = input()
 
-        print('Please waiting...')
-        print('If your face is not recognized, press p to enter the password.')
-        print('And if you want to exit the program, press the q key.')
-        face_recog = face_recog.FaceRecog()
+        name_data = []
 
-        while True:
-            frame, compare_name = face_recog.get_frame()
+        file = os.listdir('datas')
+        for filename in file:
+            name, ext = os.path.splitext(filename)
+            if ext == '.txt':
+                name_data.append(name)
 
-            cv2.imshow("Frame", frame)
-            key = cv2.waitKey(1) & 0xFF
+        count = 0
+        for i in name_data:
+            if i == user_name:
+                count += 1
 
-            # q 버튼을 누르면
-            if key == ord("q"):
-                # 종료
-                break
 
-            # 입력받은 이름이 카메라로 인식한 사람의 얼굴 이름과 동일하면
-            elif user_name == compare_name:
-                print('** User {}, Welcome! **'.format(user_name))
-                break
+        if count == 1:
+            print('Please waiting...')
+            print('If your face is not recognized, press p to enter the password.')
+            print('And if you want to exit the program, press the q key.')
+            face_recog = face_recog.FaceRecog()
 
-            # 인식이 안돼서 p 버튼 누르고 비밀번호를 입력받고 싶다면
-            elif key == ord("p"):
-                print('Please enter the password for user {}:'.format(user_name))
-                password = input()
-                user_file = open('datas/{}.txt'.format(user_name), 'r')
-                if password == user_file.read():
+            while True:
+                frame, compare_name = face_recog.get_frame()
+
+                cv2.imshow("Frame", frame)
+                key = cv2.waitKey(1) & 0xFF
+
+                # q 버튼을 누르면
+                if key == ord("q"):
+                    # 종료
+                    break
+
+                # 입력받은 이름이 카메라로 인식한 사람의 얼굴 이름과 동일하면
+                elif user_name == compare_name:
                     print('** User {}, Welcome! **'.format(user_name))
-                    user_file.close()
-                else:
-                    print('Wrong password! Exit the register...')
-                    user_file.close()
+                    break
 
-        cv2.destroyAllWindows()
-        print('finish')
+                # 인식이 안돼서 p 버튼 누르고 비밀번호를 입력받고 싶다면
+                elif key == ord("p"):
+                    print('Please enter the password for user {}:'.format(user_name))
+                    password = input()
+                    user_file = open('datas/{}.txt'.format(user_name), 'r')
+                    if password == user_file.read():
+                        print('** User {}, Welcome! **'.format(user_name))
+                        user_file.close()
+                    else:
+                        print('Wrong password! Exit the register...')
+                        user_file.close()
+
+            cv2.destroyAllWindows()
+            print('finish')
+        else:
+            print("등록되지 않은 유저입니다.")
+
 
 else:
     print('You have been entered incorrectly. Please re-enter.')
