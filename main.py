@@ -6,7 +6,7 @@ import face_recog
 #registration service
 
 # 이미 등록된 이름인지 확인
-def checkName(user_name):
+def check_name(user):
     name_data = []
 
     file = os.listdir('datas')
@@ -15,11 +15,11 @@ def checkName(user_name):
         if ext == '.txt':
             name_data.append(name)
 
-    count = 0
+    count_1 = 0
     for i in name_data:
-        if i == user_name:
-            count += 1
-    return count
+        if i == user:
+            count_1 += 1
+    return count_1
 
 print('Enter \'sign up\' if you want to sign up and \'log in\' if you want to log in.')
 action = input()
@@ -29,10 +29,12 @@ if action == 'sign up':
     print('Please enter the name to register: ')
     user_name = input()
 
-    count = checkName(user_name)
+    count = check_name(user_name)
 
     if count == 1:
+        print("Name already registered.")
 
+    else:
         print('Enter password to enter if face recognition fails: ')
         password = input()
 
@@ -41,7 +43,7 @@ if action == 'sign up':
         user_file.write(password)
         user_file.close()
 
-        #카메라로 유저 얼굴 캡처하고 knowns에 넣어줌
+        # 카메라로 유저 얼굴 캡처하고 knowns에 넣어줌
         capture = cv2.VideoCapture(0)
         if capture.isOpened():
             while True:
@@ -59,8 +61,7 @@ if action == 'sign up':
             print('no camera!')
         capture.release()
         cv2.destroyAllWindows()
-    else:
-        print("Name already registered.")
+
 
 # 로그인
 elif action == 'log in':
@@ -69,7 +70,7 @@ elif action == 'log in':
         user_name = input()
 
         # 아이디 존재 여부 확인
-        count = checkName(user_name)
+        count = check_name(user_name)
 
         if count == 1:
             print('Please waiting...')
@@ -90,7 +91,9 @@ elif action == 'log in':
 
                 # 입력받은 이름이 카메라로 인식한 사람의 얼굴 이름과 동일하면
                 elif user_name == compare_name:
+                    print('\n----------------------------')
                     print('** User {}, Welcome! **'.format(user_name))
+                    print('----------------------------\n')
                     break
 
                 # 인식이 안돼서 p 버튼 누르고 비밀번호를 입력받고 싶다면
@@ -99,7 +102,9 @@ elif action == 'log in':
                     password = input()
                     user_file = open('datas/{}.txt'.format(user_name), 'r')
                     if password == user_file.read():
+                        print('\n----------------------------')
                         print('** User {}, Welcome! **'.format(user_name))
+                        print('----------------------------\n')
                         user_file.close()
                     else:
                         print('Wrong password! Exit the register...')
@@ -109,7 +114,6 @@ elif action == 'log in':
             print('finish')
         else:
             print("This user is not registered.")
-
 
 else:
     print('You have been entered incorrectly. Please re-enter.')
