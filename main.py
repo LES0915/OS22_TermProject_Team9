@@ -5,7 +5,21 @@ import face_recog
 
 #registration service
 
+# 이미 등록된 이름인지 확인
+def checkName(user_name):
+    name_data = []
 
+    file = os.listdir('datas')
+    for filename in file:
+        name, ext = os.path.splitext(filename)
+        if ext == '.txt':
+            name_data.append(name)
+
+    count2 = 0
+    for i in name_data:
+        if i == user_name:
+            count += 1
+    return count
 
 print('Enter \'sign up\' if you want to sign up and \'log in\' if you want to log in.')
 action = input()
@@ -14,32 +28,39 @@ action = input()
 if action == 'sign up':
     print('Please enter the name to register: ')
     user_name = input()
-    print('Enter password to enter if face recognition fails: ')
-    password = input()
 
-    # 유저 닉네임으로 된 파일 생성, 파일 안에는 비밀번호 입력해주고 파일 닫아줌
-    user_file = open('datas/{}.txt'.format(user_name), 'w')
-    user_file.write(password)
-    user_file.close()
+    count = checkName(user_name)
 
-    #카메라로 유저 얼굴 캡처하고 knowns에 넣어줌
-    capture = cv2.VideoCapture(0)
-    if capture.isOpened():
-        while True:
-            ret, frame = capture.read()
+    if count == 1:
 
-            if ret:
-                cv2.imshow('camera', frame)
-                if cv2.waitKey(1) != -1:
-                    cv2.imwrite('knowns/{}.jpg'.format(user_name), frame)
+        print('Enter password to enter if face recognition fails: ')
+        password = input()
+
+        # 유저 닉네임으로 된 파일 생성, 파일 안에는 비밀번호 입력해주고 파일 닫아줌
+        user_file = open('datas/{}.txt'.format(user_name), 'w')
+        user_file.write(password)
+        user_file.close()
+
+        #카메라로 유저 얼굴 캡처하고 knowns에 넣어줌
+        capture = cv2.VideoCapture(0)
+        if capture.isOpened():
+            while True:
+                ret, frame = capture.read()
+
+                if ret:
+                    cv2.imshow('camera', frame)
+                    if cv2.waitKey(1) != -1:
+                        cv2.imwrite('knowns/{}.jpg'.format(user_name), frame)
+                        break
+                else:
+                    print('no frame')
                     break
-            else:
-                print('no frame')
-                break
+        else:
+            print('no camera!')
+        capture.release()
+        cv2.destroyAllWindows()
     else:
-        print('no camera!')
-    capture.release()
-    cv2.destroyAllWindows()
+        print("Name already registered.")
 
 # 로그인
 elif action == 'log in':
@@ -47,19 +68,8 @@ elif action == 'log in':
         print('Enter the name to login: ')
         user_name = input()
 
-        name_data = []
-
-        file = os.listdir('datas')
-        for filename in file:
-            name, ext = os.path.splitext(filename)
-            if ext == '.txt':
-                name_data.append(name)
-
-        count = 0
-        for i in name_data:
-            if i == user_name:
-                count += 1
-
+        # 아이디 존재 여부 확인
+        count = checkName(user_name)
 
         if count == 1:
             print('Please waiting...')
@@ -98,7 +108,7 @@ elif action == 'log in':
             cv2.destroyAllWindows()
             print('finish')
         else:
-            print("등록되지 않은 유저입니다.")
+            print("This user is not registered.")
 
 
 else:
