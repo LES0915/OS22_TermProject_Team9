@@ -1,7 +1,17 @@
+import os
+
 import cv2
 import face_recog
 
 #registration service
+
+entire_data = []
+
+file = os.listdir('datas')
+for filename in file:
+    name, ext = os.path.splitext(filename)
+    if ext == '.txt':
+        entire_data.append(name)
 
 print('Enter \'sign up\' if you want to sign up and \'log in\' if you want to log in.')
 action = input()
