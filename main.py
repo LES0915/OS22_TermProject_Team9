@@ -71,10 +71,11 @@ elif action == 'log in':
                 user_file = open('datas/{}.txt'.format(user_name), 'r')
                 if password == user_file.read():
                     print('** User {}, Welcome! **'.format(user_name))
+                    user_file.close()
                 else:
                     print('Wrong password! Exit the register...')
+                    user_file.close()
 
-        user_file.close()
         cv2.destroyAllWindows()
         print('finish')
 
