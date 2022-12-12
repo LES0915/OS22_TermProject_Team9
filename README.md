@@ -15,3 +15,6 @@ Afterwards, when the camera turns on, press any key on the keyboard to capture a
 When you type login, enter a name for login.  
 If the ID exists, the camera turns on, and if it is the same person through face recognition, a Welcome message appears.  
 If it does not continue to be recognized, you can manually press the p button to log in through the password.
+
+### Reference link
+[face_recognition](https://github.com/ageitgey/face_recognition).
