@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8731968e-023f-487a-84d6-ad341a7e3652" name="변경" comment="youjin" />
+    <list default="true" id="8731968e-023f-487a-84d6-ad341a7e3652" name="변경" comment="youjin">
+      <change afterPath="$PROJECT_DIR$/datas/namuneju.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/knowns/namuneju.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -194,6 +198,7 @@
       <workItem from="1670663391974" duration="916000" />
       <workItem from="1670665290037" duration="295000" />
       <workItem from="1670666423527" duration="1105000" />
+      <workItem from="1670819811292" duration="908000" />
     </task>
     <task id="LOCAL-00001" summary="youjin">
       <created>1669367458217</created>
@@ -247,7 +252,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/OS22_TermPoject_Team9$test.coverage" NAME="main 커버리지 결과" MODIFIED="1670613848688" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/OS22_TermPoject_Team9$main.coverage" NAME="main 커버리지 결과" MODIFIED="1670666885709" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/OS22_TermPoject_Team9$main.coverage" NAME="main 커버리지 결과" MODIFIED="1670820051237" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/OS22_TermPoject_Team9$camera.coverage" NAME="camera 커버리지 결과" MODIFIED="1669367416729" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/OS22_TermPoject_Team9$face_recog.coverage" NAME="face_recog 커버리지 결과" MODIFIED="1670609620002" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/OS22_TermPoject_Team9$test_oy.coverage" NAME="test.oy 커버리지 결과" MODIFIED="1669368166494" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
