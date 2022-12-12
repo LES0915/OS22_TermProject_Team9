@@ -1,4 +1,5 @@
 # face_recog.py
+# These codes help with face recognition
 
 import face_recognition
 import cv2
