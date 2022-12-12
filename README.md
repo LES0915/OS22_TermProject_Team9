@@ -13,27 +13,27 @@ https://user-images.githubusercontent.com/112804593/207092133-29e67c2f-e94d-493d
 
 
 ## 📃The package used 📃
-* Flask
-* Jinja2
-* MarkupSafe
-* Pillow
-* Werkzeug
-* click
-* cmake
-* colorama
-* dlib
-* face
-* face_recognition
-* face_recognition_models
-* importlib-metadata
-* imutils
-* itsdangerous
-* numpy
-* opencv-contrib-python
-* opencv-python
-* pip
-* setuptools
-* zipp
+* Flask (2.2.2)
+* Jinja2 (3.1.2) 
+* MarkupSafe (2.1.1)
+* Pillow (9.3.0)
+* Werkzeug (2.2.2)
+* click (8.1.3)
+* cmake (3.25.0)
+* colorama (0.4.6)
+* dlib (19.24.0)
+* face (22.0.0)
+* face_recognition (1.3.0)
+* face_recognition_models (0.3.0)
+* importlib-metadata (5.0.0)
+* imutils (0.5.4)
+* itsdangerous (2.1.2)
+* numpy (1.23.5)
+* opencv-contrib-python (4.6.0.66)
+* opencv-python (4.6.0.66)
+* pip (20.2.3)
+* setuptools (49.2.1)
+* zipp (3.10.0)
 
 ## ✍️ How to practice ✍️
 Enter sign up or log in.
