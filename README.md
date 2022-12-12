@@ -5,12 +5,13 @@ This project used a face recognition service using OpenCV. Face recognition logi
 
 
 ## How to practice
-When you type sign up, enter a name for registration.
+Enter sign up or log in.
 
-Verify that the name is already registered.
-If the name is not registered, enter a password.
+When you type sign up, enter a name for registration. \n
+Verify that the name is already registered. \n
+If the name is not registered, enter a password. \n
 Afterwards, when the camera turns on, press any key on the keyboard to capture and save your face.
 
-When you type login, enter a name for login.
-If the ID exists, the camera turns on, and if it is the same person through face recognition, a Welcome message appears.
+When you type login, enter a name for login. \n
+If the ID exists, the camera turns on, and if it is the same person through face recognition, a Welcome message appears. \n
 If it does not continue to be recognized, you can manually press the p button to log in through the password.
