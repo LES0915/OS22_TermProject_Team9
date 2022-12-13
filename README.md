@@ -5,7 +5,7 @@ This project used a face recognition service using OpenCV. Face recognition logi
 ## 🎞️ a demonstration video 🎞️
 
 
-https://user-images.githubusercontent.com/112804593/207092133-29e67c2f-e94d-493d-9b1a-f73a9e6ad8fd.mp4
+<iframe width="872" height="545" src="https://www.youtube.com/embed/_LeMepjLh4k" title="OS22 TermProject Team9" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
 
