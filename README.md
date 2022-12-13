@@ -3,7 +3,7 @@
 This project used a face recognition service using OpenCV. **Face recognition login service.** When everyone registers their face and name, they recognize their face and even match their name. If your face is not recognized, you can log in manually with a password.
 
 ## 🎞️ a demonstration video 🎞️
-https://studio.youtube.com/channel/UCyIIIoBL-b7gDmZfBqrlwNw/videos/upload?filter=%5B%5D&sort=%7B%22columnType%22%3A%22date%22%2C%22sortOrder%22%3A%22DESCENDING%22%7D
+https://www.youtube.com/watch?v=_LeMepjLh4k
 
 
 ## 📃The package used 📃
