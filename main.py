@@ -20,6 +20,7 @@ def check_name(user):
             count_1 += 1
     return count_1
 
+# Select login or sign up
 print('Enter \'sign up\' if you want to sign up and \'log in\' if you want to log in.')
 action = input()
 
@@ -27,7 +28,8 @@ action = input()
 if action == 'sign up':
     print('Please enter the name to register: ')
     user_name = input()
-
+    
+    # Check if ID exists
     count = check_name(user_name)
 
     if count == 1:
@@ -89,7 +91,6 @@ elif action == 'log in':
                     break
 
                 # If the given name is the same as the face name of the person recognized by the camera,
-
                 elif user_name == compare_name:
                     print('\n----------------------------')
                     print('** User {}, Welcome! **'.format(user_name))
