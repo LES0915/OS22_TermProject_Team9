@@ -35,6 +35,8 @@ This project used a face recognition service using OpenCV. Face recognition logi
 * zipp (3.10.0)
 
 ## ✍️ How to practice ✍️
+After downloading all the files in the repository, you can run the program by running the file main.py.
+
 Enter sign up or log in.
 
 When you type sign up, enter a name for registration.  
